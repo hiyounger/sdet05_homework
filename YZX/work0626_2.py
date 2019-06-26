@@ -25,16 +25,14 @@ while True:
 print (wupin[0]['编号']),
 print (wupin[0]['价格']),
 print (wupin[0]['折后价格'])
-for i in range(len(wupin)):
+for i in range(0,len(wupin)):
     for wu in wupin:
-        print (wu[i]['id']) ,
-        print  (wu[i]['原价']) ,
-        print (wu[i]['折后价'])
+        print wu
 print ("总价（sSUM）：") ,
 SP=0
 for pri in wupin:
     SP+=pri['折后价']
-print (SP)
+    print (SP)
 
 
 

@@ -6,6 +6,7 @@ mermber = [
 ]
 tel=str(input('请输入你的手机号码：'))
 count=0
+zhekou=1
 for mem in mermber:
     count+=1
     if mem['tel']==tel:
@@ -14,3 +15,13 @@ for mem in mermber:
         break
     if count==len(mermber):
             print ("由于您不是会员，所以无法享受优惠")
+wupin=['id','Original','Discount']
+wupin1=[]
+while True:
+    name = raw_input('请输入您购买的物品：')
+    if name == 'Q':
+        break
+    price = float(raw_input('请输入您购买物品的原价：'))
+    wupin1.append({'id':len(wupin),'Original':price,'Discount':(price*zhekou)})
+for wu in wupin:
+       print wu   ,
