@@ -1,16 +1,14 @@
 #encoding:utf-8
-try:
-    a=int(input("请输入利润（万元）："))
-except NameError:
-    a="请重新输入"
-except SyntaxError:
-    a="请重新输入"
+while True:
+    try:
+        a=float(input("请输入获得的利润（万元）：\n"))
+        break
+    except:
+        print("请输入合法的利润！")
 
 if a<0:
     print("利润不能是负数！")
-elif a=="请重新输入":
-    print("输入有误，请重新输入！")
-elif  0<a<=10:
+elif  0<=a<=10:
     print("发放的奖金是:%.3f万元"%(a*0.1))
 elif a>10 and a<=20:
     print("发放的奖金是:%.3f万元"%(10*0.1+(a-10)*0.075))
