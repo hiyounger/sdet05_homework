@@ -17,3 +17,6 @@ while True:
     else:
         count=count+1
         print "猜小了"
+
+
+
