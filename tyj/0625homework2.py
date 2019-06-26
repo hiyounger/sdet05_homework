@@ -17,5 +17,5 @@ if int(a)>0:
             print ("这是一个千禧年")
         else:
             print ("这不是闰年")
-# else:
-#         print ("输入有误")
+else:
+        print ("输入有误,请输入正确的年份")
