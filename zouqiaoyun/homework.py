@@ -1,5 +1,11 @@
 # coding:utf-8
-i=int(raw_input("请输入当月利润（万）"))
+while True:
+    try:
+        i=float(raw_input("请输入当月利润（万）"))
+        break
+    except:
+        print("请输入数字")
+sum=0
 if i>0 and i<=10:
     sum+=i*0.1
 elif i>10 and i<=20:
