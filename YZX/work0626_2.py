@@ -14,7 +14,7 @@ for mem in mermber:
         zhekou=mem['zhekou']
         print ("尊敬的会员，您的会员卡折扣为%f"%mem['zhekou'])
         break
-        if count==len(mermber):
+    if count==len(mermber):
             print ("由于您不是会员，所以无法享受优惠")
 while True:
     name = raw_input('请输入您购买的物品：')
