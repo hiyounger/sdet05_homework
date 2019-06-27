@@ -104,8 +104,6 @@ def format_out_msg(pay_list,total):
     out_msg +="总价:\t%s'"%total
     return out_msg
 output=format_out_msg(pay_list,total)
-
-#5.输出
 print(output)
 
 
