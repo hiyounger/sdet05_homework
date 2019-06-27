@@ -17,7 +17,7 @@ for mem in mermber:
     if count==len(mermber):
             print ("由于您不是会员，所以无法享受优惠")
 while True:
-    name = raw_input('请输入您购买的物品：')
+    name = str(raw_input('请输入您购买的物品：'))
     if name == 'Q':
         break
     price = float(input('请输入您购买物品的原价：'))
