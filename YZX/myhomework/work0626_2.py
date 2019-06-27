@@ -14,27 +14,28 @@ for mem in mermber:
         zhekou=mem['zhekou']
         print ("尊敬的会员，您的会员卡折扣为%f"%mem['zhekou'])
         break
-        if count==len(mermber):
+    if count==len(mermber):
             print ("由于您不是会员，所以无法享受优惠")
 while True:
-    name = raw_input('请输入您购买的物品：')
+    name = str(raw_input('请输入您购买的物品：'))
     if name == 'Q':
         break
-    price = float(raw_input('请输入您购买物品的原价：'))
+    price = float(input('请输入您购买物品的原价：'))
     wupin.append({'id':len(wupin),'原价':price,'折后价':(price*zhekou)})
 print (wupin[0]['编号']),
 print (wupin[0]['价格']),
 print (wupin[0]['折后价格'])
-for i in range(len(wupin)):
+for i in range(1,len(wupin)):
     for wu in wupin:
-        print (wu[i]['id']) ,
-        print  (wu[i]['原价']) ,
-        print (wu[i]['折后价'])
-print ("总价（sSUM）：") ,
+        print wu
+# for wu in wupin:
+#     for wuu in wu:
+#         print wuu['id']
+print ("总价（SUM）：") ,
 SP=0
 for pri in wupin:
     SP+=pri['折后价']
-print (SP)
+    print (SP)
 
 
 
