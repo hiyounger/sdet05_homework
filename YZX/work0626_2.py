@@ -20,15 +20,18 @@ while True:
     name = raw_input('请输入您购买的物品：')
     if name == 'Q':
         break
-    price = float(raw_input('请输入您购买物品的原价：'))
+    price = float(input('请输入您购买物品的原价：'))
     wupin.append({'id':len(wupin),'原价':price,'折后价':(price*zhekou)})
 print (wupin[0]['编号']),
 print (wupin[0]['价格']),
 print (wupin[0]['折后价格'])
-for i in range(0,len(wupin)):
+for i in range(1,len(wupin)):
     for wu in wupin:
         print wu
-print ("总价（sSUM）：") ,
+# for wu in wupin:
+#     for wuu in wu:
+#         print wuu['id']
+print ("总价（SUM）：") ,
 SP=0
 for pri in wupin:
     SP+=pri['折后价']
