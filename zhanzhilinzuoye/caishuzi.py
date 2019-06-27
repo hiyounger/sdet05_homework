@@ -1,5 +1,5 @@
 # coding:utf-8
-#
+##
 import random
 random_numer=random.randint(0,100)
 counter=0
