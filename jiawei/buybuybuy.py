@@ -18,6 +18,27 @@ def get_product_input():
         return 'Q'
     return 100
 
+# TODO 依据输入的商品列表，计算商品的结算清单及总价
+def calculator_payment(prod_list):
+#     待完善如何通过商品列表生成结算清单，并计算总价
+    payment_list=[
+        [1,100,90],
+        [2,80,72]
+    ]
+    payment_total=162
+    return payment_list,payment_total
+# TODO 格式化输出内容
+def format_out_msg(list,total):
+#     待完善格式化算法
+    out_msg='''
+    商品ID\t原价\t折后价
+    1\t100\t90
+    2\t\80\t72
+    ------------------------
+    总价：\t162
+    '''
+    return out_msg
+
 
 # 1.获取用户的手机号，并通过手机号码获取用户的折扣额度
 # 获取客户的手机号码
@@ -29,3 +50,16 @@ user_disc=get_member_discount(user_tel)
 product_list=[]
 while True:
     prod_info=get_product_input()
+    if prod_info=='Q':
+        break
+    else:
+        product_list.append(prod_info)
+
+# 3.计算上平的结算清单
+pay_list,pay_total=calculator_payment(product_list)
+
+# 4.格式化输出内容
+output=format_out_msg(pay_list,pay_total)
+
+# 5.输出
+print(output)
