@@ -5,13 +5,9 @@ members=[
     {'id':'4','tel':'13312345674','disc':0.8}
 ]
 class MembersHelp():
-    def get_member_discount(self,tel):
+    @classmethod
+    def get_member_discount(cls,tel):
         for member in members:
             if member['tel']==tel:
                 return member['disc']
         return 1.0
-
-user1=MembersHelp().get_member_discount("13312345673")
-user2=MembersHelp().get_member_discount('123')
-print user1
-print user2
