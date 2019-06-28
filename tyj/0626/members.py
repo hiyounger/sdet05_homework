@@ -1,5 +1,4 @@
 # encoding:utf-8
-# 1.数据结构
 # 定义会员信息
 members=[
     {'id':'1','tel':'131','disc':0.98},
