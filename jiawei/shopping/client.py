@@ -24,7 +24,6 @@ class salesclient():
             total += prod_list[i] * user_disc
         return payment_list, total
 
-
     @classmethod
     #  格式化输出结果
 
