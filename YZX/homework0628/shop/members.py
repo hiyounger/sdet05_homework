@@ -59,6 +59,18 @@ class Members():
 # del_by_tel=Members()
 # del_by_tel.del_member_by_tell(18845871680)
 #修改会员信息（手机号，折扣）
+    @classmethod
+    def modify_member_by_tel(cls,tel,disc):
+        for mem in members:
+            if str(tel)==mem['tel']:
+                mem['disc']=disc
+                print mem
+                return 1
+        print ("该手机未注册")
+        return False
+# member_modify=Members()
+# member_modify.modify_member_by_tel(18845871680,0.2)
+# member_modify.modify_member_by_tel(1884587168,0.2)
 #会员可累积购物积分
 
 
