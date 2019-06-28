@@ -1,4 +1,5 @@
 import unittest
+
 from YZX.shop.members import Members
 
 class MyTestCase(unittest.TestCase):
@@ -12,7 +13,6 @@ class MyTestCase(unittest.TestCase):
         print ("3.set up test case")
     def tearDown(self):
         print ("4.tear down test case")
-
     def test_case01(self):
         tel='18845871680'
         exp_disc=0.9
@@ -23,7 +23,5 @@ class MyTestCase(unittest.TestCase):
         exp_disc = 0.1
         act_disc = Members.get_disc_by_tell(tel)
         self.assertEqual(exp_disc, act_disc)
-
-
 if __name__ == '__main__':
     unittest.main()
