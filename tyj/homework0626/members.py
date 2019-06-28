@@ -14,3 +14,20 @@ class membershelp():
                 return member['disc']
         return 1.0
 
+# 新增
+    new_member=
+    members.append()
+
+
+
+# 获取所有会员列表
+
+#根据手机号的后4位获取会员信息
+
+# 根据手机号注销会员
+
+# 修改会员信息（手机号  折扣）
+
+
+
+# 会员可累积购物积分
