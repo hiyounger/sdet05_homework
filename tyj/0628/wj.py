@@ -13,8 +13,9 @@ class wenjuan():
         return 'Q1,Q2,Q3,Q4'
     def answer_questions(self,A1,A2,A3,A4):
         self.answer_list = [A1,A2,A3,A4]
+        wenjuan.answer_list.append(self.answer_list)
         self.score = 100
-        wenjuan.total=self.score
+        wenjuan.total+=self.score
 
 
     @classmethod
@@ -39,4 +40,4 @@ print (wj2.score)
 
 print wenjuan.cont
 print wenjuan.total
-print ('get_answer_list_by_id')
+print wenjuan.get_answer_list_by_id(2)
