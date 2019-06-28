@@ -1,7 +1,7 @@
 #encoding:utf-8
 members=[
-    {'id':'1','tel':'18845871680','disc':0.9},
-    {'id':'2','tel':'18845095099','disc':0.1}
+    {'id':'1','tel':'18845871680','disc':0.9,'state':1},
+    {'id':'2','tel':'18845095099','disc':0.1,'state':1}
 ]
 class Members():
     @classmethod
@@ -19,12 +19,25 @@ class Members():
                 print ("已注册，注册失败")
                 return False
         id=len(members)
-        member={'id':id,'tel':tel,'disc':1}
+        member={'id':id,'tel':tel,'disc':1,'state':1}
         members.append(member)
         print ('注册成功')
         return 1
-add=Members()
-add.add_member_by_tell('18845871680')
-add.add_member_by_tell('111')
+# add=Members()
+# add.add_member_by_tell('18845871680')
+# add.add_member_by_tell('111')
+#获取所有会员列表全部信息
+    @classmethod
+    def get_members_all(cls):
+        for mem in members:
+            print ("会员编号：%s\t电话%s\t折扣%s\t状态%s\t"%(mem['id'],mem['tel'],mem['disc'],mem['state']))
+        return 1
+# all=Members()
+# all.get_members_all()
+#根据手机号的后四位获取会员信息
+#根据手机号注销会员
+#修改会员信息（手机号，折扣）
+#会员可累积购物积分
+
 
 

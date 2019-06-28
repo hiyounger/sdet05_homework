@@ -14,7 +14,5 @@ class TestAddMember(unittest.TestCase):
         exp_add=False
         act_add=Members.add_member_by_tell(tel)
         self.assertEqual(exp_add, exp_add)
-
-
 if __name__ == '__main__':
     unittest.main()
