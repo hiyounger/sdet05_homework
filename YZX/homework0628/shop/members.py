@@ -47,6 +47,17 @@ class Members():
 # last_four=Members()
 # last_four.get_mermber_by_tell_last_four(5099)
 #根据手机号注销会员
+    @classmethod
+    def del_member_by_tell(cls,tel):
+        for mem in members:
+            if str(tel)==mem['tel']:
+                mem['state']=0
+                print ("删除成功")
+                return 1
+        print ("不存在该用户")
+        return False
+# del_by_tel=Members()
+# del_by_tel.del_member_by_tell(18845871680)
 #修改会员信息（手机号，折扣）
 #会员可累积购物积分
 
