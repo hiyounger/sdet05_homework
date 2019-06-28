@@ -18,7 +18,7 @@ class Members():
             if mem['tel']==tel:
                 print ("已注册，注册失败")
                 return False
-        id=len(members)
+        id=len(members)+1
         member={'id':id,'tel':tel,'disc':1,'state':1}
         members.append(member)
         print ('注册成功')
@@ -35,6 +35,17 @@ class Members():
 # all=Members()
 # all.get_members_all()
 #根据手机号的后四位获取会员信息
+    @classmethod
+    def get_mermber_by_tell_last_four(cls,tel_last_four):
+        for mem in members:
+            i=float(mem['tel'])
+            a=i%10000
+            if tel_last_four==a:
+                print ("会员编号：%s\t电话%s\t折扣%s\t状态%s\t"%(mem['id'],mem['tel'],mem['disc'],mem['state']))
+                return 1
+        return False
+# last_four=Members()
+# last_four.get_mermber_by_tell_last_four(5099)
 #根据手机号注销会员
 #修改会员信息（手机号，折扣）
 #会员可累积购物积分
