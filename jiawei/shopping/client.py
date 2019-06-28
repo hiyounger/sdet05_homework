@@ -26,7 +26,6 @@ class salesclient():
 
     @classmethod
     #  格式化输出结果
-
     def format_out_msg(cls,list, total):
         out_msg = "商品ID\t原价\t折后价\n"
         for prod in list:
