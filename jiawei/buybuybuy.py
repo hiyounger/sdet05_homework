@@ -29,14 +29,15 @@ def calculator_payment(prod_list):
     return payment_list,payment_total
 # TODO 格式化输出内容
 def format_out_msg(list,total):
-#     待完善格式化算法
-    out_msg='''
-    商品ID\t原价\t折后价
-    1\t100\t90
-    2\t\80\t72
-    ------------------------
-    总价：\t162
-    '''
+#     待完善格式化
+    out_msg="商品ID\t原价\t折后价\n"
+    for prod in list:
+        out_msg+="%s\t%s\t%s\n"%(prod[0],prod[1],prod[2])
+    out_msg+='----------------------\n'
+    out_msg+="总价：\t%s"%total
+    return out_msg
+
+
     return out_msg
 
 
