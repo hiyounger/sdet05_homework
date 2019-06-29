@@ -7,8 +7,11 @@ members=[
 ]
 
 class membersHelper():
-    def get_member_discount(self,u_tel):
+
+    @classmethod
+    def get_member_discount(cls,u_tel):
         for member in members:
             if member["tel"]==u_tel:
                return member["discount"]
         return 1.0
+
