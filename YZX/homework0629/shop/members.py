@@ -19,7 +19,7 @@ class Members():
                 print ("已注册，注册失败")
                 return False
         id=len(members)+1
-        member={'id':id,'tel':tel,'disc':1,'state':1}
+        member={'id':id,'tel':tel,'disc':1,'state':1,'points':0}
         members.append(member)
         print ('注册成功')
         return 1
@@ -30,7 +30,7 @@ class Members():
     @classmethod
     def get_members_all(cls):
         for mem in members:
-            print ("会员编号：%s\t电话%s\t折扣%s\t状态%s\t"%(mem['id'],mem['tel'],mem['disc'],mem['state']))
+            print ("会员编号：%s\t电话%s\t折扣%s\t状态%s\t积分"%(mem['id'],mem['tel'],mem['disc'],mem['state'],mem['points']))
         return 1
 # all=Members()
 # all.get_members_all()
@@ -41,7 +41,7 @@ class Members():
             i=float(mem['tel'])
             a=i%10000
             if tel_last_four==a:
-                print ("会员编号：%s\t电话%s\t折扣%s\t状态%s\t"%(mem['id'],mem['tel'],mem['disc'],mem['state']))
+                print ("会员编号：%s\t电话%s\t折扣%s\t状态%s\t积分%s"%(mem['id'],mem['tel'],mem['disc'],mem['state'],mem['points']))
                 return 1
         return False
 # last_four=Members()
@@ -75,7 +75,7 @@ class Members():
     @classmethod
     def accumulated_shopping_points(cls,tel,sum):
         for mem in members:
-            if str(tel)==mem['tel']:
+            if str(tel)==mem['tel'] and mem['state']==1:
                 print ("找到会员，开始累计积分。")
                 mem['points']+=sum
                 if mem['points']<1000:
