@@ -52,6 +52,7 @@ def calculator_payment(prod_list,user_disc):
         total+=prod_list[i]*user_disc
     return payment_list,total
 
+
 #  格式化输出结果
 
 def format_out_msg(list,total):
@@ -61,7 +62,6 @@ def format_out_msg(list,total):
     out_msg+='-------------------\n'
     out_msg+="总价：\t%s"%total
     return out_msg
-
 # 1.获取用户的手机号，并通过手机号码获取用户的折扣额度
 user_tel=raw_input('请提供手机号码：')
 user_dics=get_member_discount(user_tel)

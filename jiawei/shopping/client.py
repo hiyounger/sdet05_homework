@@ -1,5 +1,7 @@
-#encoding:utf-8
-class salesclient():
+# encoding:utf-8
+
+class Salesclient():
+
     @classmethod
     #  获取用户对商品信息的输入
     def get_product_input(cls):
@@ -11,7 +13,6 @@ class salesclient():
                 if user_input == "Q":
                     return 'Q'
                 print('输入错误，请重新输入')
-
 
     @classmethod
     #  依据输入的商品列表，计算商品的结算清单及总价
