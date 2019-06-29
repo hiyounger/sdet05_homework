@@ -1,7 +1,7 @@
 #encoding:utf-8
 members=[
-    {'id':'1','tel':'18845871680','disc':0.9,'state':1},
-    {'id':'2','tel':'18845095099','disc':0.1,'state':1}
+    {'id':'1','tel':'18845871680','disc':0.9,'state':1,'points':0000},
+    {'id':'2','tel':'18845095099','disc':0.1,'state':1,'points':0000}
 ]
 class Members():
     @classmethod
@@ -72,6 +72,28 @@ class Members():
 # member_modify.modify_member_by_tel(18845871680,0.2)
 # member_modify.modify_member_by_tel(1884587168,0.2)
 #会员可累积购物积分
+    @classmethod
+    def accumulated_shopping_points(cls,tel,sum):
+        for mem in members:
+            if str(tel)==mem['tel']:
+                print ("找到会员，开始累计积分。")
+                mem['points']+=sum
+                if mem['points']<1000:
+                    mem['disc']=1
+                elif mem['points']>=1000 and mem['points']<3000:
+                    mem['disc']=0.98
+                elif mem['points']>=3000 and mem['points']<5000:
+                    mem['disc'] = 0.98
+                else:
+                    mem['disc'] = 0.90
+                print mem['disc']
+                return mem['disc']
+        print ("未找到该手机注册的会员，无法累计积分")
+        return False
+# accumulated=Members()
+# accumulated.accumulated_shopping_points(18845871680,10000)
+# accumulated.accumulated_shopping_points(111,1000)
+
 
 
 

@@ -22,7 +22,6 @@ class scilt():
             sum += shop_list[i] * disc
         pay_lists = [scilt.pay_list, sum]
         return pay_lists
-
     # 输出格式
     @classmethod
     def out_way(cls,new_pay_list):
