@@ -28,6 +28,10 @@ class membershelp():
             return 1
 
 # 获取所有会员列表
+    @classmethod
+    def select_member(cls):
+        for member in members:
+            print ('会员编号:%s \t 电话:%s \t 折扣:%s'%(member['id'],member['tel'],member['disc']))
 
 #根据手机号的后4位获取会员信息
 
