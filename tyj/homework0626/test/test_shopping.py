@@ -10,10 +10,10 @@ class TestMemberHelper(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         print ("2,Tear Down test class")
-    def setUp(self):
-        print ('3,Set up test case')
-    def tearDown(self):
-        print ('4,Tear down test case')
+    # def setUp(self):
+    #     print ('3,Set up test case')
+    # def tearDown(self):
+    #     print ('4,Tear down test case')
 
     def test_case01(self):
         tel = "131"

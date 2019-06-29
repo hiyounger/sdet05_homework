@@ -15,10 +15,17 @@ class membershelp():
         return 1.0
 
 # 新增
-    new_member=
-    members.append()
-
-
+    @classmethod
+    def add_new_member(cls,tel):
+        for add_new_member_tel in members:
+            if add_new_member_tel['tel']==tel:
+                print ('会员已存在')
+                return False
+            add_new_member_id="len(members)+1"
+            add_new_member = {'id':add_new_member_id,'tel':add_new_member_tel,'disc':'1'}
+            members.append(add_new_member)
+            print ("新会员注册成功")
+            return 1
 
 # 获取所有会员列表
 
