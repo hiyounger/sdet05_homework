@@ -25,8 +25,8 @@ class membersHelper1():
 
 #增加会员
      @classmethod
-     def add_newmember(cls):
-             tel=raw_input("请输入新的电话号码：")
+     def add_newmember(cls,tel):
+
              for i in members:
                      if i['tel'] == tel:
                          print ("已经注册过会员")
@@ -36,7 +36,8 @@ class membersHelper1():
              newmember = {"id": id, "tel": tel, "discount": 0.9, "status": "active", "jifen": 0}
              members.append(newmember)
              print ('注册成功')
-             print(members)
+             print(newmember)
+             return newmember
 
 
 
@@ -51,9 +52,8 @@ class membersHelper1():
 
 #根据手机号后四位获取会员信息
      @classmethod
-     def get_member_list_by_lastfournumber(cls):
+     def get_member_list_by_lastfournumber(cls,lastfourtelnumber):
             text_list=[]
-            lastfourtelnumber = raw_input("请输入手机号的后四位:")
             a=list(lastfourtelnumber)
             for i in members:
                 b=list(i["tel"])
@@ -61,51 +61,40 @@ class membersHelper1():
                         text_list.append(i)
                         print("匹配到的会员信息:%s"%text_list)
 
-            return 1.0
+            return text_list
 
 #根据手机号注销会员
      @classmethod
-     def zhuxiao_member(cls):
-         tel=raw_input("请输入手机号码：")
+     def zhuxiao_member(cls,tel):
          for i in members:
                  if i["tel"] == tel:
                      i["status"]="inactive"
                      print("注销的会员：%s"%i)
-         return 1.0
+         return i
 
 #修改会员信息（手机号和折扣）
      @classmethod
-     def update_member(cls):
-         tel=raw_input("请输入用户手机号:")
-         status=raw_input("请输入用户的状态：")
+     def update_member(cls,tel,status,update_choice,new_tel,new_discount):
          for i in members:
              if i["tel"]==tel and  i["status"]=="inactive":
                  print("该用户已经被注销了")
                  return 1.0
              elif i["tel"]==tel and i["status"]=="active":
-              print("选择如下如下:\n1：修改电话号码\n2：修改折扣\n3:电话号码和折扣都修改\n")
-              update_choice=raw_input("请输入你的选择：")
-
 
               if update_choice=="1":
-                new_tel = raw_input("请输入新修改的号码:")
                 i["tel"]=new_tel
                 print("修改后的会员信息%s"%i)
                 return i
               elif update_choice=="2":
-                    new_discount = float(raw_input("请输入新修改的折扣:"))
                     i["discount"]=new_discount
                     print("修改后的会员信息%s"%i)
                     return i
-              elif update_choice=="3":
-                  new_tel = raw_input("请输入新修改的号码:")
-                  new_discount = float(raw_input("请输入新修改的折扣:"))
+              else :
                   i["tel"]=new_tel
                   i["discount"] =new_discount
                   print("修改后的会员信息%s"%i)
                   return i
-              else:
-                     return False
+
 
 
 
@@ -117,24 +106,25 @@ class membersHelper1():
              if i["tel"] == tel and i["status"] == "active":
                  print ("找到会员，开始累计积分。")
                  i['jifen'] += total
-         print("总积分：%s"%i["jifen"])
-         return i["jifen"]
-
-     @classmethod
-     def get_discount_by_jifen(cls,jifen):
-             for i in members:
+                 print("总积分：%s"%i["jifen"])
                  if i['jifen'] < 1000 and i["jifen"]>0:
-                     i['discount'] = i["discount"]
+                    i['discount'] = i["discount"]
+                    print("最后的折扣：%s" % (i["discount"]))
                  elif i['jifen'] >= 1000 and i['jifen'] < 3000:
-                     i['discount'] = i["discount"]*0.98
+                      i['discount'] = i["discount"]*0.98
+                      print("最后的折扣：%s" % (i["discount"]))
                  elif i['jifen'] >= 3000 and i['jifen'] < 5000:
-                     i['discount'] = i["discount"] * 0.95
+                      i['discount'] = i["discount"] * 0.95
+                      print("最后的折扣：%s" % (i["discount"]))
                  elif i['jifen'] >= 5000:
-                     i['discount'] = i["discount"] * 0.9
+                      i['discount'] = i["discount"] * 0.9
+                      print("最后的折扣：%s" % (i["discount"]))
                  else:
                      i['discount']=1
-             print("最后的折扣：%s"%(i["discount"]))
-             return i["discount"]
+                     print("最后的折扣：%s"%(i["discount"]))
+
+                 return i["jifen"],i["discount"]
+
 
 
 
