@@ -1,4 +1,5 @@
 # encoding:utf-8
+from liu.market.client import client
 members=[{'id':'1','tel':'188','disc':0.9},
 {'id':'2','tel':'187','disc':0.8},
 {'id':'3','tel':'186','disc':0.7}]
@@ -55,6 +56,11 @@ class MembersHelp():
 #会员累积购物积分
     @classmethod
     def accumulate_vip(cls,u_tel):
+        member = {'id': id, "tel": u_tel, 'disc': 1, 'status': 0,'acu':'acu'}
+        for member in members:
+            if member['tel']==u_tel:
+
+
 
 
 
