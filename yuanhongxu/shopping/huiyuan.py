@@ -62,17 +62,17 @@ class huiyuan_help():
     def update_huiyuan(cls):
         tel_update = raw_input("请输入要修改的会员手机号")
         for i in huiyuan:
-            if i["tel"]==tel_update and i["status"]=="inactive":
+            if i["tel"] == tel_update and i["status"] == "inactive":
                 print ("此会员已注销")
                 return None
         choose_update = input("请输入要修改的内容：按1修改手机号，按2修改折扣信息")
-        if choose_update==1:
-            new_tel=raw_input("请输入新手机号")
+        if choose_update == 1:
+            new_tel = raw_input("请输入新手机号")
             for i in huiyuan:
                 if i["tel"] == tel_update:
                     i["tel"] = new_tel
-        if choose_update==2:
-            new_disc=input("请输入新折扣")
+        if choose_update == 2:
+            new_disc = input("请输入新折扣")
             for i in huiyuan:
                 if i["tel"] == tel_update:
                     i["disc"] = new_disc

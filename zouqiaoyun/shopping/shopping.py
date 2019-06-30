@@ -3,6 +3,7 @@ from members import membersHelper
 from client import Salesclient
 # 定义一种获取会员信息的方法
 def saling():
+
     u_tel=raw_input("请输入用户的手机号：")
     u_discount=membersHelper.get_member_discount(u_tel)
     # # 获取用户对商品信息的输入

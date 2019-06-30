@@ -15,13 +15,13 @@ class Salesclient():
                 print("用户输入错误，请重新输入")
 
     @classmethod
-    def calcultor_payment(cls,product_list, u_discount):
+    def calcultor_payment(cls,product_list,discount):
         total = 0
         pay_list = []
         for i in range(len(product_list)):
-            payment_item = [i + 1, product_list[i], product_list[i] * u_discount]
+            payment_item = [i + 1, product_list[i], product_list[i] * discount]
             pay_list.append(payment_item)
-            total += product_list[i] * u_discount
+            total += product_list[i] * discount
         return pay_list, total
 
     @classmethod

@@ -15,3 +15,16 @@ class membersHelper():
                return member["discount"]
         return 1.0
 
+
+
+
+
+
+
+
+
+
+
+
+
+
