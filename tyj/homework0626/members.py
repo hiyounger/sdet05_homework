@@ -34,11 +34,36 @@ class membershelp():
             print ('会员编号:%s \t 电话:%s \t 折扣:%s'%(member['id'],member['tel'],member['disc']))
 
 #根据手机号的后4位获取会员信息
-
+    @classmethod
+    def get_mermber_by_tell_last_four(cls,tel_last_four):
+        for member in members:
+            # tell_last_four = float(member['tel'])%10000
+            i = float(member['tel'])
+            a = i % 10000
+            if tel_last_four == a:
+                print ('会员编号:%s \t 电话:%s \t 折扣:%s'%(member['id'],member['tel'],member['disc']))
+                return 1
+        return False
 # 根据手机号注销会员
-
+    @classmethod
+    def del_member_by_tell(cls,tel):
+        for member in members:
+            if str(tel)==member['tel']:
+                member['state']=0
+                print ("删除成功")
+                return 1
+        print ("不存在该用户")
+        return False
 # 修改会员信息（手机号  折扣）
-
+    @classmethod
+    def modify_member_by_tel(cls,tel,disc):
+        for member in members:
+            if str(tel)==member[tel]:
+                member['disc']=disc
+                print member
+                return 1
+        print ("该手机未注册")
+        return False
 
 
 # 会员可累积购物积分
