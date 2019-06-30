@@ -38,8 +38,6 @@ class membershelp():
     def get_mermber_by_tell_last_four(cls,tel_last_four):
         for member in members:
             tell_last_four = float(member['tel'])%10000
-            i = float(member['tel'])
-            a = i % 10000
             if tell_last_four == a:
                 print ('会员编号:%s \t 电话:%s \t 折扣:%s'%(member['id'],member['tel'],member['disc']))
                 return 1
