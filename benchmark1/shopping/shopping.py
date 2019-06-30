@@ -10,6 +10,16 @@ def saling():
 
     # #2. 录入商品信息
     product_list = []
+
+    def get_product_input(cls):
+        while True:
+            try:
+                user_input = raw_input('请输入商品的价格或是Q结束：\n')
+                return float(user_input)
+            except:
+                if user_input == "Q":
+                    return 'Q'
+                print('输入错误，请重新输入')
     while True:
         prod_info = SalesClient.get_product_input()
         if prod_info == "Q":

@@ -24,3 +24,5 @@ def saling():
     print (out_put)
 if __name__=='__main__':
     saling()
+
+
