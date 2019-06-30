@@ -37,7 +37,7 @@ class membershelp():
     @classmethod
     def get_mermber_by_tell_last_four(cls,tel_last_four):
         for member in members:
-            # tell_last_four = float(member['tel'])%10000
+            tell_last_four = float(member['tel'])%10000
             i = float(member['tel'])
             a = i % 10000
             if tel_last_four == a:
