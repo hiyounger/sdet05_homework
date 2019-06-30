@@ -40,7 +40,7 @@ class membershelp():
             tell_last_four = float(member['tel'])%10000
             i = float(member['tel'])
             a = i % 10000
-            if tel_last_four == a:
+            if tell_last_four == a:
                 print ('会员编号:%s \t 电话:%s \t 折扣:%s'%(member['id'],member['tel'],member['disc']))
                 return 1
         return False
