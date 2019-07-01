@@ -1,9 +1,9 @@
 # encoding:utf-8
 
 rembers = [
-    {'id':'1','tel':'18812345671','disc':0.95,'credit':0000},
-    {'id':'2','tel':'18812345672','disc':0.9,'credit':0000},
-    {'id':'3','tel':'18812345673','disc':0.8,'credit':0000}
+    {'id':'1','tel':'18812345671','disc':0.95,'credit':0000,'statue':1},
+    {'id':'2','tel':'18812345672','disc':0.9,'credit':0000,'statue':1},
+    {'id':'3','tel':'18812345673','disc':0.8,'credit':0000,'statue':1}
 ]
 
 class MemberHelper():
@@ -18,19 +18,23 @@ class MemberHelper():
      return 1.0
 
     #新增会员
-    @classmethod
-    def add_rembers(cls,tel):
+
+
+    # @classmethod
+    def add_rembers(self,tel):
       for i in rembers:
           if i['tel']==tel:
-              print i['该手机号已注册']
+              print '该手机号已注册'
               return False
 
       id=len(rembers)+1
 
-      rember = {'id':id,'tel':tel,'disc':0.9,'credit':0000}
+      rember = {'id':id,'tel':tel,'disc':0.9,'credit':0000,'statue':1}
       rembers.append(rember)
       print("注册成功")
+      print rembers
       return 1
+
 
     #获取所有会员列表
 
@@ -87,3 +91,6 @@ class MemberHelper():
                 print(rem['disc'])
                 return rem['disc']
         print("未找到该会员，无法积分")
+add=MemberHelper()
+tel = raw_input("输入手机号：")
+add.add_rembers(tel)
