@@ -11,7 +11,7 @@ class TestAddMember(unittest.TestCase):
         self.assertEqual(exp_add, exp_add)
     def test_addcase02(self):
         tel='1'
-        exp_add=False
+        exp_add=1
         act_add=Members.add_member_by_tell(tel)
         self.assertEqual(exp_add, exp_add)
 if __name__ == '__main__':
