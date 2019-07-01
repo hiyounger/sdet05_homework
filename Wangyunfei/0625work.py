@@ -1,9 +1,15 @@
 # coding:utf-8
-a=input('请输入利润值')
+while True:
+    try:
+        a=float(input('请输入利润值'))
+        break
+    except:
+        print('请重新输入')
+
 if float(a)>10:
     if float(a)>10 and float(a)<=20:
-       b=(a-10)*0.075+10*0.1
-       print('奖金发放总数为%f万'%b)
+        b=(a-10)*0.075+10*0.1
+        print('奖金发放总数为%f万'%b)
     elif float(a)>20 and float(a)<=40:
         b=10*0.1+10*0.075+(a-20)*0.05
         print('奖金发放总数为%f万' % b)

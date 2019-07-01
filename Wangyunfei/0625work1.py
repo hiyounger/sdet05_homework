@@ -1,15 +1,28 @@
 # coding:utf-8
-a=input('请输入一个年份')
-if int(a)>0:
-    if int(a)%4==0 or int(a)%400==0:
+while True:
+    try:
+        a=int(input('请输入一个年份'))
+        if a<0:
+            print('不可为负数')
+            break
+    except:
+        print('请重新输入')
 
-        if int(a)%400==0  :
-            print('%d年是世纪闰年'%a)
-        elif int(a)%4==0 and int(a)%100!=0:
-            print('%d年是普通闰年'%a)
-        else:
-            print('%d年不是闰年'%a)
+if int(a) % 100 == 0:
+    if int(a) % 400 == 0:
+        print ("%d是闰年" % a)
+    else:
+        print ("%d不是闰年" % a)
 else:
-    print('输入错误')
+    if int(a) % 4 == 0:
+        print ("%d是闰年" % a)
+    else:
+        print ("%d不是闰年" % a)
+
+
+
+
+
+
 
 
