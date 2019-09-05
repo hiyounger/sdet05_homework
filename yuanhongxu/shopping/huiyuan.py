@@ -7,13 +7,13 @@ huiyuan=[
 ]
 
 class huiyuan_help():
-    #通过电话号码返回折扣
-    # @classmethod
-    # def tel_disc(cls,user_tel):
-    #     for i in huiyuan:
-    #         if i['tel']==user_tel:
-    #             return i['disc']
-    #     return 1.0
+    # 通过电话号码返回折扣
+    @classmethod
+    def tel_disc(cls,user_tel):
+        for i in huiyuan:
+            if i['tel']==user_tel:
+                return i['disc']
+        return 1.0
 
 
 
