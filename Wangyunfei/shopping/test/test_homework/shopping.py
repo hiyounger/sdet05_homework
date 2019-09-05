@@ -73,10 +73,9 @@ class memberHelp():
 
 # 会员累计购物积分
     @classmethod
-    def Cumulative_members_jifen(cls,tel):
+    def Cumulative_members_jifen(cls,tel,sum):
         for mem in members:
             if str(tel)==mem['tel'] and mem['state']==1:
-                print ("找到会员，开始累计积分。")
                 mem['jifen']+=sum
                 if mem['jifen']<1000:
                     print(mem['jifen']==1)
@@ -86,8 +85,11 @@ class memberHelp():
                     print(mem['jifen'] == 0.9)
                 elif mem['jifen'] >= 2000 :
                     print(mem['jifen'] == 0.8)
-            print('无法找到该会员，无法进行积分累计')
-        return 'no'
+                return mem['discount']
+        print('对不起您不是会员，无法进行积分累计')
+        return False
+
+
 
 
 
